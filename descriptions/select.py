@@ -34,7 +34,8 @@ def open_file(datafile):
 
 
 def select_data(data):
-    selected = data[(data.metaPORTRAIT == 1) | (data.metaPHYSIONOMIE == 1)]
+    selected = data[(data.remPHYMORdis == 1)]
+    #selected = data[(data.metaPORTRAIT == 1) | (data.metaPHYSIONOMIE == 1)]
     return selected
 
 

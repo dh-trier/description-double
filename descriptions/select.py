@@ -32,7 +32,7 @@ def open_file(datafile):
 
 
 def select_data(data):
-    selected = data[(data.objPPHYS == 1) & (data.toposVOYEURISME == 1)]
+    selected = data[(data.metaPORTRAIT == 1) | (data.metaPHYSIONOMIE == 1)]
     return selected
 
 

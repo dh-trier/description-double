@@ -34,16 +34,19 @@ def open_file(datafile):
 
 
 def select_data(data):
-    selected = data[(data.remPHYMORdis == 1)]
-    #selected = data[(data.metaPORTRAIT == 1) | (data.metaPHYSIONOMIE == 1)]
+    #selected = data[(data.remPHYMORdis == 1)]
+    #selected = data[(data.remPHYMORcon == 1)]
+    #selected = data[(data.metaPORTRAIT == 1)]
+    #selected = data[(data.metaPHYSIONOMIE == 1)]
+    selected = data[(data.objPPHYS == 1) | (data.objPPHYSMOR == 1)]
     return selected
 
 
 def save_data(selected): 
-    selected = selected[["author", "title", "text"]]
+    selected = selected[["author", "title", "pages", "letter", "text"]]
     print(selected.head())
     print(selected.shape)
-    with open("DD_selected.txt", "w", encoding="utf8") as outfile: 
+    with open("DD_selected_objPPHYS-OR-objPPHYSMOR.txt", "w", encoding="utf8") as outfile: 
         selected.to_csv(outfile, sep="\t")
 
 

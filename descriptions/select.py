@@ -28,6 +28,8 @@ def open_file(datafile):
     with open(datafile, "r", encoding="utf8") as infile: 
         data = pd.read_csv(infile, sep="\t")
         #print(data.head())
+        #columns = data.columns.tolist()
+        #print(columns)
         return data
 
 
